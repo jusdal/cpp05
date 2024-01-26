@@ -6,20 +6,22 @@
 /*   By: jdaly <jdaly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:09:53 by jdaly             #+#    #+#             */
-/*   Updated: 2024/01/26 16:08:03 by jdaly            ###   ########.fr       */
+/*   Updated: 2024/01/26 16:19:14 by jdaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name("Bureaucrat")
+Bureaucrat::Bureaucrat()
 {
     std::cout << "Bureaucrat constructor called." << std::endl;
     std::cout << "Please enter Bureaucrat Name: " << std::endl;
-    std::cin << "Bureaucrat constructor called." << std::endl;
+    std::cin >> _name;
+    std::cout << "Please enter Bureaucrat Grade: " << std::endl;
+    std::cin >> _grade;
     try
     {
-        if () // grade is < 1
+        if (_grade < 1) // grade is < 1
         {
             throw 
         }
