@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdaly <jdaly@student.42.fr>                +#+  +:+       +#+        */
+/*   By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 19:06:50 by jdaly             #+#    #+#             */
-/*   Updated: 2024/04/30 19:38:35 by jdaly            ###   ########.fr       */
+/*   Updated: 2024/05/01 18:20:16 by justindaly       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
-# define FORM_HPP
+#define FORM_HPP
 
 # include <iostream>
 # include <string>
 # include <stdexcept>
 # include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -36,10 +38,10 @@ public:
     
     std::string	getName() const;
     bool        getSigned() const;
-    int			getGrade() const;
-    void        beSigned(Bureaucrat b1);
-    void        signForm(Bureaucrat b1);
-
+    int			getGradeToSign() const;
+	int			getGradeToExecute() const;
+    void        beSigned(const Bureaucrat& b1);
+    
 	/* Exception Classes */
 	class GradeTooHighException : public std::exception
     {
@@ -60,3 +62,5 @@ public:
 };
 
 std::ostream&	operator<<(std::ostream& o, const Form& rhs);
+
+#endif
