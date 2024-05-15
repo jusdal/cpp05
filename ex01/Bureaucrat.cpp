@@ -6,7 +6,7 @@
 /*   By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:09:53 by jdaly             #+#    #+#             */
-/*   Updated: 2024/05/01 18:13:20 by justindaly       ###   ########.fr       */
+/*   Updated: 2024/05/15 16:56:07 by justindaly       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,17 +70,19 @@ void	Bureaucrat::signForm(Form& form)
 	try
 	{
 		form.beSigned(*this);
-		std::cout << *this << " has signed " << form.getName() << std::endl;
+		std::cout << getName() << " has signed " << form.getName() << std::endl;
 	}
 	catch (Form::GradeTooLowException &e)
 	{
-		std::cout << *this << " could not sign " << form.getName() << " because " << e.what() << std::endl; 
+		std::cout << getName() << " could not sign " << form.getName() << " because " << e.what() << std::endl; 
 	}
 	
 }
 
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& rhs)
 {
+
+	o << "-------- BUREAUCRAT INFO --------" << std::endl;
 	o << rhs.getName() << "'s grade is: " << rhs.getGrade() << std::endl;
 	return o;
 }

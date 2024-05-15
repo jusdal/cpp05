@@ -6,7 +6,7 @@
 /*   By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 19:13:28 by jdaly             #+#    #+#             */
-/*   Updated: 2024/05/01 18:26:53 by justindaly       ###   ########.fr       */
+/*   Updated: 2024/05/15 16:49:23 by justindaly       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,11 @@ Form& Form::operator=(Form const& rhs)
 std::string Form::getName() const
 {
     return (_name);
+}
+
+bool	Form::getSigned() const
+{
+	return (_signed);
 }
 
 int Form::getGradeToSign() const

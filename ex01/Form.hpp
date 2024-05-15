@@ -6,7 +6,7 @@
 /*   By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 19:06:50 by jdaly             #+#    #+#             */
-/*   Updated: 2024/05/01 18:20:16 by justindaly       ###   ########.fr       */
+/*   Updated: 2024/05/15 16:57:29 by justindaly       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ public:
         public:
 			const char* what() const throw()
 			{
-				return "Form grade too high";
+				return "their grade is too high";
 			}
     };
 	class GradeTooLowException : public std::exception
@@ -56,7 +56,7 @@ public:
 		public:
 			const char* what() const throw()
 			{
-				return "Form grade too low";
+				return "their grade is too low";
 			}
 	};
 };

@@ -6,7 +6,7 @@
 #    By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/26 15:24:52 by jdaly             #+#    #+#              #
-#    Updated: 2024/05/01 18:16:32 by justindaly       ###   ########.fr        #
+#    Updated: 2024/05/15 17:18:53 by justindaly       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_FILES = main Bureaucrat Form
 
 SRC = $(SRC_FILES:=.cpp)
 OBJ_FILES = $(SRC_FILES:=.o)
-HEADER = Bureaucrat.hpp
+HEADER = Bureaucrat.hpp Form.hpp
 
 all: $(NAME)
 
