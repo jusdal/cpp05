@@ -6,33 +6,33 @@
 /*   By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:17:39 by jdaly             #+#    #+#             */
-/*   Updated: 2024/05/15 16:58:53 by justindaly       ###   ########.fr       */
+/*   Updated: 2024/05/22 17:26:16 by justindaly       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-void    test1()
-{
-    try
-    {
-        Bureaucrat bureaucrat1("bo", 15);
-		Form form1("form1", 10, 10);
+int main() {
+    try {
+        // Create a Bureaucrat with sufficient grade to execute the form
+        Bureaucrat bob("Bob", 130); 
 
-		std::cout << bureaucrat1 << std::endl;
-		std::cout << form1 << std::endl;
-		bureaucrat1.signForm(form1);
+        // Create a ShrubberyCreationForm with a target location
+        ShrubberyCreationForm shrubForm("garden"); 
+
+        // Have the Bureaucrat sign the form
+        bob.signForm(shrubForm); 
+
+        // Have the Bureaucrat execute the form
+        bob.executeForm(shrubForm);
+
+        std::cout << "Shrubbery creation successful!" << std::endl;
+
+    } catch (std::exception &e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+        return 1; // Indicate failure
     }
-    catch(const std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-}
-
-int	main()
-{
-	test1();
-    //test2();
-	return (0);
+    return 0; // Indicate success
 }
