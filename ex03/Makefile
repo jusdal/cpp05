@@ -6,7 +6,7 @@
 #    By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/26 15:24:52 by jdaly             #+#    #+#              #
-#    Updated: 2024/05/23 18:12:26 by justindaly       ###   ########.fr        #
+#    Updated: 2024/05/23 18:33:11 by justindaly       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
-SRC_FILES = main Bureaucrat AForm ShrubberyCreationForm RobotomyRequestForm PresidentialPardonForm
+SRC_FILES = main Bureaucrat AForm Intern ShrubberyCreationForm RobotomyRequestForm PresidentialPardonForm
 
 SRC = $(SRC_FILES:=.cpp)
 OBJ_FILES = $(SRC_FILES:=.o)
-HEADER = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+HEADER = Bureaucrat.hpp AForm.hpp Intern.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 
 all: $(NAME)
 
