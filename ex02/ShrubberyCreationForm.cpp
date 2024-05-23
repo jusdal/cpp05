@@ -6,7 +6,7 @@
 /*   By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:22:22 by justindaly        #+#    #+#             */
-/*   Updated: 2024/05/22 18:38:00 by justindaly       ###   ########.fr       */
+/*   Updated: 2024/05/23 17:02:45 by justindaly       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,27 +51,22 @@ std::string ShrubberyCreationForm::getTarget() const
 
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const& executor) const
-{
-	if (!getSigned())
-		throw FormNotSignedException();
-	if (executor.getGrade() > getGradeToExecute())
-		throw GradeTooLowException();
-
+void ShrubberyCreationForm::executeAction(Bureaucrat const& executor) const
+{	
 	std::ofstream outfile(_target + "_shrubbery");
     if (!outfile.is_open()) {
         throw std::runtime_error("Failed to create shrubbery file");
     }
 
-    int numTrees = 5; // Number of trees to print
+    int numTrees = 3; // Number of rows to print
 
     const std::string ASCII_TREE[] = {
-        "    *    ",
-        "   ***   ",
-        "  *****  ",
-        " ******* ",
-        "*********",
-        "   |||   "
+        "    *          *          *          *    ",
+        "   ***        ***        ***        ***   ",
+        "  *****      *****      *****      *****  ",
+        " *******    *******    *******    ******* ",
+        "*********  *********  *********  *********",
+        "   |||        |||        |||        |||   "
     };
 
     for (int j = 0; j < numTrees; ++j) {
@@ -80,6 +75,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const& executor) const
         }
         outfile << std::endl; // Add an empty line between trees
     }
-
     outfile.close();
+
+	std::cout << executor.getName() << " has planted trees on " << _target << std::endl;
 }

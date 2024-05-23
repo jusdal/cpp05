@@ -6,7 +6,7 @@
 /*   By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 19:06:50 by jdaly             #+#    #+#             */
-/*   Updated: 2024/05/22 17:46:08 by justindaly       ###   ########.fr       */
+/*   Updated: 2024/05/23 16:41:15 by justindaly       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ public:
     int				getGradeToSign() const;
 	int				getGradeToExecute() const;
     void			beSigned(const Bureaucrat& b1);
-	virtual void	execute(Bureaucrat const& executor) const = 0;
-
+	void			execute(Bureaucrat const& executor) const; 			//function to check grades prior to action
+	virtual void	executeAction(Bureaucrat const& executor) const = 0; //pure virtual function for specific action
     
 	/* Exception Classes */
 	class GradeTooHighException : public std::exception

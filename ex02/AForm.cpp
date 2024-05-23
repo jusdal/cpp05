@@ -56,7 +56,7 @@ int AForm::getGradeToSign() const
     return (_gradeToSign);
 }
 
-int AForm::getGradeToExecute() const
+int	AForm::getGradeToExecute() const
 {
     return (_gradeToExecute);
 }
@@ -76,4 +76,14 @@ std::ostream& operator<<(std::ostream& o, const AForm& rhs)
 	o << "Grade to Sign: " << rhs.getGradeToSign() << std::endl;
 	o << "Grade to Execute: " << rhs.getGradeToExecute() << std::endl;
 	return o;
+}
+
+void	AForm::execute(Bureaucrat const & executor) const {
+    if (!this->getSigned()) {
+        throw FormNotSignedException(); 
+    }
+    if (executor.getGrade() > this->getGradeToExecute()) {
+        throw GradeTooLowException(); 
+    }
+    this->executeAction(executor);
 }

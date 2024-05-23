@@ -6,7 +6,7 @@
 /*   By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:14:53 by justindaly        #+#    #+#             */
-/*   Updated: 2024/05/22 17:56:01 by justindaly       ###   ########.fr       */
+/*   Updated: 2024/05/23 16:54:41 by justindaly       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class ShrubberyCreationForm : public AForm
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm& operator=(ShrubberyCreationForm const& rhs);
 
-		void		execute(Bureaucrat const& executor) const;
+		void		executeAction(Bureaucrat const& executor) const;
 		std::string	getTarget() const;
 };
 
