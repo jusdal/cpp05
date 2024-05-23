@@ -6,11 +6,11 @@
 #    By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/26 15:24:52 by jdaly             #+#    #+#              #
-#    Updated: 2024/05/23 18:33:11 by justindaly       ###   ########.fr        #
+#    Updated: 2024/05/23 18:36:44 by justindaly       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = forms2
+NAME = intern
 
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
