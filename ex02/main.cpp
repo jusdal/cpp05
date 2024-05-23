@@ -6,7 +6,7 @@
 /*   By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:17:39 by jdaly             #+#    #+#             */
-/*   Updated: 2024/05/22 17:26:16 by justindaly       ###   ########.fr       */
+/*   Updated: 2024/05/22 20:00:48 by justindaly       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@
 int main() {
     try {
         // Create a Bureaucrat with sufficient grade to execute the form
-        Bureaucrat bob("Bob", 130); 
+        Bureaucrat bob("Bob", 130);
+		std::cout << bob << std::endl;
 
         // Create a ShrubberyCreationForm with a target location
         ShrubberyCreationForm shrubForm("garden"); 
-
+		std::cout << shrubForm << std::endl;
+		
         // Have the Bureaucrat sign the form
         bob.signForm(shrubForm); 
 
