@@ -3,56 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdaly <jdaly@student.42.fr>                +#+  +:+       +#+        */
+/*   By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:17:39 by jdaly             #+#    #+#             */
-/*   Updated: 2024/04/30 18:56:09 by jdaly            ###   ########.fr       */
+/*   Updated: 2024/07/01 18:17:25 by justindaly       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-void    test1()
-{
-    try
-    {
-        Bureaucrat bureaucrat1("bo", 1);
+// Test function for Bureaucrat creation and grade manipulation
+void testBureaucrat() {
+    std::cout << "\n--- Testing Bureaucrat ---\n";
 
-		std::cout << bureaucrat1 << std::endl;
+    try {
+        Bureaucrat bob("Bob", 1); // Highest grade
+        std::cout << "Created bureaucrat: " << bob << std::endl;
 
-		bureaucrat1.incGrade();
-        std::cout << bureaucrat1.getName() << "'s grade after is: " << bureaucrat1.getGrade() << std::endl;
-		bureaucrat1.decGrade();
-        std::cout << bureaucrat1.getName() << "'s grade after is: " << bureaucrat1.getGrade() << std::endl;
+        Bureaucrat alice("Alice", 150); // Lowest grade
+        std::cout << "Created bureaucrat: " << alice << std::endl;
+
+        Bureaucrat invalid("Invalid", 0); // Should throw an exception
+    } catch (std::exception& e) {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
     }
-    catch(const std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-}
 
-void    test2()
-{
-    try
-    {
-        Bureaucrat bureaucrat1("bo", 100);
+    try {
+        Bureaucrat charlie("Charlie", 50);
+        std::cout << "Created bureaucrat: " << charlie << std::endl;
 
-		std::cout << bureaucrat1 << std::endl;
-std::cout << bureaucrat1.getName() << "'s grade after is: " << bureaucrat1.getGrade() << std::endl;std::cout << bureaucrat1.getName() << "'s grade after is: " << bureaucrat1.getGrade() << std::endl;
-		bureaucrat1.incGrade();
-        std::cout << bureaucrat1.getName() << "'s grade after is: " << bureaucrat1.getGrade() << std::endl;
-		bureaucrat1.decGrade();
-        std::cout << bureaucrat1.getName() << "'s grade after is: " << bureaucrat1.getGrade() << std::endl;
-    }
-    catch(const std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
+        charlie.incGrade();
+        std::cout << "After increment: " << charlie << std::endl;
+
+        charlie.decGrade();
+        std::cout << "After decrement: " << charlie << std::endl;
+
+        charlie.decGrade(); // Should throw an exception (grade too low)
+    } catch (std::exception& e) {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
     }
 }
 
-int	main()
-{
-	test1();
-    test2();
-	return (0);
+int main() {
+    testBureaucrat();
+    return 0;
 }
