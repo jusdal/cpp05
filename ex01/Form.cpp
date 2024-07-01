@@ -6,7 +6,7 @@
 /*   By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 19:13:28 by jdaly             #+#    #+#             */
-/*   Updated: 2024/05/15 16:49:23 by justindaly       ###   ########.fr       */
+/*   Updated: 2024/07/01 18:21:51 by justindaly       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ std::ostream& operator<<(std::ostream& o, const Form& rhs)
 {
 	o << "-------- FORM INFO --------" << std::endl;
 	o << "Form Name: " << rhs.getName() << std::endl;
+	o << "Signed Status: " << (rhs.getSigned() ? "Signed" : "Not Signed") << std::endl;
 	o << "Grade to Sign: " << rhs.getGradeToSign() << std::endl;
 	o << "Grade to Execute: " << rhs.getGradeToExecute() << std::endl;
 	return o;
