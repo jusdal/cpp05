@@ -6,33 +6,40 @@
 /*   By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:17:39 by jdaly             #+#    #+#             */
-/*   Updated: 2024/05/15 16:58:53 by justindaly       ###   ########.fr       */
+/*   Updated: 2024/07/01 18:23:59 by justindaly       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-void    test1()
-{
-    try
-    {
-        Bureaucrat bureaucrat1("bo", 15);
-		Form form1("form1", 10, 10);
+// Test function for Form creation, signing, and execution
+void testForm() {
+    std::cout << "\n--- Testing Form ---\n";
 
-		std::cout << bureaucrat1 << std::endl;
-		std::cout << form1 << std::endl;
-		bureaucrat1.signForm(form1);
+    try {
+        Bureaucrat b("Charlie", 35);
+        Form f("Form 28B", 40, 40); // Requires grade 40 to sign
+
+        std::cout << "Before signing: " << f << std::endl;
+        b.signForm(f);
+        std::cout << "After signing: " << f << std::endl;
+    } catch (std::exception& e) {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
     }
-    catch(const std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
+
+    try {
+        Bureaucrat lowGradeB("LowGrade", 60); // Grade too low to sign
+        Form f2("Form 28C", 40, 40);
+
+        std::cout << "\nAttempting to sign with low-grade bureaucrat: " << std::endl;
+        lowGradeB.signForm(f2); // Should throw an exception
+    } catch (std::exception& e) {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
     }
 }
 
-int	main()
-{
-	test1();
-    //test2();
-	return (0);
+int main() {
+    testForm();
+    return 0;
 }
