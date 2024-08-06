@@ -6,7 +6,7 @@
 /*   By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:17:39 by jdaly             #+#    #+#             */
-/*   Updated: 2024/07/01 18:33:53 by justindaly       ###   ########.fr       */
+/*   Updated: 2024/08/06 14:30:20 by justindaly       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,12 @@ void testIntern() {
         AForm* rrf;
         AForm* ppf;
         AForm* scf;
+		//AForm* nullf;
+
         rrf = someRandomIntern.makeForm("robotomy request", "Bender");
         ppf = someRandomIntern.makeForm("presidential pardon", "Richard Nixon");
         scf = someRandomIntern.makeForm("shrubbery creation", "home");
+		//nullf = someRandomIntern.makeForm("no name form", "target");
 
         std::cout << *rrf << std::endl;
         std::cout << *ppf << std::endl;
@@ -36,6 +39,7 @@ void testIntern() {
         delete rrf;
         delete ppf;
         delete scf;
+		//delete nullf;
     }
     catch (std::exception & e) {
         std::cerr << "Exception caught: " << e.what() << std::endl;
