@@ -6,12 +6,12 @@
 /*   By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 19:06:50 by jdaly             #+#    #+#             */
-/*   Updated: 2024/05/15 16:57:29 by justindaly       ###   ########.fr       */
+/*   Updated: 2024/08/06 13:35:55 by justindaly       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
-#define FORM_HPP
+# define FORM_HPP
 
 # include <iostream>
 # include <string>
@@ -28,13 +28,13 @@ private:
     const int           _gradeToSign;       //grade required to sign
     const int           _gradeToExecute;    //grade required to execute
 	
-	Form();							//constructor
+	Form();									//constructor
 
 public:
 	Form(const std::string& name, int gradeToSign, int gradeToExecutee); //constructor with input
-    Form(Form const& other);    		//copy constructor
-    ~Form();                         			//destructor
-    Form& operator=(Form const& rhs); 	//copy assignment
+    Form(Form const& other);    			//copy constructor
+    ~Form();                         		//destructor
+    Form& operator=(Form const& rhs); 		//copy assignment
     
     std::string	getName() const;
     bool        getSigned() const;
@@ -61,6 +61,6 @@ public:
 	};
 };
 
-std::ostream&	operator<<(std::ostream& o, const Form& rhs);
+std::ostream&	operator<<(std::ostream& o, const Form& rhs); //non-member function
 
-#endif
+#endif //FORM_HPP

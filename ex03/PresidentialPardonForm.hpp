@@ -6,14 +6,14 @@
 /*   By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 17:21:03 by justindaly        #+#    #+#             */
-/*   Updated: 2024/05/23 17:30:36 by justindaly       ###   ########.fr       */
+/*   Updated: 2024/08/06 14:03:40 by justindaly       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
-#define PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
-#include "AForm.hpp"
+# include "AForm.hpp"
 
 class PresidentialPardonForm : public AForm
 {

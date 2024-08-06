@@ -6,7 +6,7 @@
 /*   By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:09:53 by jdaly             #+#    #+#             */
-/*   Updated: 2024/05/01 18:23:15 by justindaly       ###   ########.fr       */
+/*   Updated: 2024/08/06 13:30:27 by justindaly       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,4 @@ public:
 
 std::ostream&	operator<<(std::ostream& o, const Bureaucrat& rhs);
 
-#endif
+#endif //BUREAUCRAT_HPP
