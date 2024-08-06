@@ -6,7 +6,7 @@
 /*   By: justindaly <justindaly@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:17:39 by jdaly             #+#    #+#             */
-/*   Updated: 2024/07/01 18:17:25 by justindaly       ###   ########.fr       */
+/*   Updated: 2024/08/06 13:18:01 by justindaly       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void testBureaucrat() {
     }
 
     try {
-        Bureaucrat charlie("Charlie", 50);
+        Bureaucrat charlie("Charlie", 50); // change to 150 to throw exception
         std::cout << "Created bureaucrat: " << charlie << std::endl;
 
         charlie.incGrade();
